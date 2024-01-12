@@ -9,12 +9,13 @@ const mailList = [
 const userInput = document.getElementById("user-mail");
 const sendButton = document.getElementById("submit-btn");
 const checkResult = document.getElementById("result");
+const registerButton = document.getElementById("register");
 
 // Creo l'event listener sul buttone
 sendButton.addEventListener("click", function () {
   const insertedMail = userInput.value;
-  let resultText = "ACCESSO NEGATO - LA TUA MAIL NON E' PRESENT";
 
+  let resultText = "ACCESSO NEGATO - LA TUA MAIL NON E' PRESENTE";
   // controllo presenza mail all'interno dell'array
   for (let i = 0; i < mailList.length; i++) {
     if (insertedMail === mailList[i]) {
@@ -22,8 +23,20 @@ sendButton.addEventListener("click", function () {
       break;
     }
   }
-  //   caso in cui non siè trovato all'interno dell'array
 
+  if (resultText !== "BENVENUTO") {
+    registerButton.classList.remove("d-none");
+    registerButton.classList.add("d-block");
+  }
   // stampo sulla pagina il risultato
   checkResult.innerText = resultText;
+});
+
+registerButton.addEventListener("click", function () {
+  const insertedMail = userInput.value;
+  mailList.push(insertedMail);
+  checkResult.innerText = "Ti sei registrato correttamente";
+  console.log(mailList);
+  registerButton.classList.remove("d-block");
+  registerButton.classList.add("d-none");
 });

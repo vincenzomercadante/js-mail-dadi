@@ -22,6 +22,9 @@
   <body>
     <main id="main" class="d-flex justify-content-center align-items-center">
       <div class="container my-5">
+        <h1 class="display-5 text-danger fw-bold text-center">
+          LOGIN or REGISTER? SCOPRILO
+        </h1>
         <form action="" method="">
           <!-- campo testo dove l'utente inserisce la mail -->
           <label for="user-mail">Email</label>
@@ -43,8 +46,15 @@
           <input type="reset" value="Annulla" class="btn btn-danger" />
         </form>
         <!-- div dove inserisco il risultato -->
-        <div class="mt-4 border">
-          <h1 class="fw-bold display-3" id="result"></h1>
+        <div class="row mt-4 border">
+          <div class="col-6">
+            <h2 class="fw-bold display-3" id="result"></h2>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-primary d-none" id="register">
+              REGISTRA
+            </button>
+          </div>
         </div>
       </div>
     </main>
