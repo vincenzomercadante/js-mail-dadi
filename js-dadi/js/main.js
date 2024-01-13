@@ -9,30 +9,31 @@ const main = document.getElementById("main");
 userButton.addEventListener("click", function () {
   // estraggo il numero dell'utente
   const userNumber = Math.floor(Math.random() * (6 - 1 + 1) + 1);
-  userNumberText.innerText = userNumber;
+
+  userNumberText.innerHTML = `
+    <i class="bi bi-dice-${userNumber}-fill">
+  `;
   // estraggo il numero del computer
   const computerNumber = Math.floor(Math.random() * (6 - 1 + 1) + 1);
-  computerNumberText.innerText = computerNumber;
+  computerNumberText.innerHTML = `
+    <i class="bi bi-dice-${computerNumber}-fill">
+  `;
   // variabile messaggio stampa
   let gameResult;
   let coriandoli;
 
   // verifica suò numero maggiore
   if (userNumber > computerNumber) {
-    gameResult = "HAI VINTOOOOOO (humans are better)";
+    gameResult = "HAI VINTO!";
     coriandoli = true;
     main.classList.add("coriandoli");
   } else if (userNumber < computerNumber) {
-    gameResult = "IL COMPUTER VINCEEE (Le macchine ci sostiuranno)";
+    gameResult = "IL COMPUTER VINCE!";
   } else {
-    gameResult = "PAREGGIO! BUUUUUU";
+    gameResult = "PAREGGIO!";
   }
 
-  if (coriandoli) {
-    main.classList.add("coriandoli");
-  } else {
-    main.classList.remove("coriandoli");
-  }
   // stampa in pagina
   result.innerText = gameResult;
+  result.style.display = "inline-block";
 });

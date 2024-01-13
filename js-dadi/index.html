@@ -8,6 +8,12 @@
     <!-- import fontawesome
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 
+    <!-- import bootstrap icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
     <!-- import bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -21,28 +27,28 @@
   </head>
   <body>
     <main id="main">
-      <div class="container text-center p-5">
+      <!-- contenitore elementi -->
+      <div class="container text-center">
         <!-- titolo pagina -->
-        <h1 class="display-5 fw-bold text-danger mb-5">
-          USER VS COMPUTER: CHI VINCERA'
-        </h1>
+        <h1 class="mb-4">USER VS COMPUTER: CHI VINCERA'</h1>
         <!-- contenitore risultati -->
         <div class="row">
-          <div
-            class="col-6 d-flex justify-content-center align-items-center flex-column"
-          >
-            <h2 class="text-primary display-4 mb-3">UTENTE</h2>
-            <!-- contenitore numero -->
-            <span id="user-number" class="display-2"></span>
+          <div class="col-6">
+            <h2>UTENTE</h2>
+            <!-- contenitore dado -->
+            <div id="user-number">
+              <i class="bi bi-dice-1-fill"></i>
+            </div>
           </div>
-          <div
-            class="col-6 text-center d-flex justify-content-center align-items-center flex-column"
-          >
-            <h2 class="text-primary display-4 mb-3">COMPUTER</h2>
-            <!-- contenitore numero -->
-            <span id="computer-number" class="display-2"></span>
+          <div class="col-6">
+            <h2>COMPUTER</h2>
+            <!-- contenitore dado -->
+            <div id="computer-number">
+              <i class="bi bi-dice-1-fill"></i>
+            </div>
           </div>
         </div>
+        <!-- contenitore play button -->
         <div class="col">
           <input
             type="button"
@@ -52,7 +58,7 @@
           />
         </div>
         <!-- risultato -->
-        <h2 class="display-3 text-danger mt-5" id="result"></h2>
+        <h2 id="result"></h2>
       </div>
     </main>
     <!-- BOOTSTRAP JS
